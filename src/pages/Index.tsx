@@ -144,15 +144,36 @@ export default function Index() {
 
   const handleExport = async (format: 'pdf' | 'docx' | 'html') => {
     setIsExporting(true);
+    const filename = `${resumeData.personalInfo.fullName || 'resume'}-resume`.replace(/\s+/g, '-').toLowerCase();
     
-    // In production, this would generate actual files
-    setTimeout(() => {
+    try {
+      const { exportToPDF, exportToHTML, exportToDOCX } = await import('@/lib/resumeExport');
+      
+      switch (format) {
+        case 'pdf':
+          await exportToPDF('resume-preview', filename);
+          break;
+        case 'html':
+          exportToHTML(resumeData, selectedTemplate, filename);
+          break;
+        case 'docx':
+          await exportToDOCX(resumeData, filename);
+          break;
+      }
+      
       toast({
-        title: 'Export Ready',
-        description: `Your resume has been exported as ${format.toUpperCase()}`,
+        title: 'Export Successful',
+        description: `Your resume has been downloaded as ${format.toUpperCase()}`,
       });
+    } catch (error) {
+      toast({
+        title: 'Export Failed',
+        description: 'There was an error exporting your resume. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
       setIsExporting(false);
-    }, 1000);
+    }
   };
 
   const handleReset = () => {
@@ -274,7 +295,9 @@ export default function Index() {
                 <h3 className="font-display text-sm text-foreground mb-3">Preview</h3>
                 <div className="aspect-[8.5/11] overflow-hidden rounded-lg border border-border">
                   <div className="w-full h-full overflow-auto scale-[0.6] origin-top-left" style={{ width: '166.67%', height: '166.67%' }}>
-                    <ResumePreview data={resumeData} template={selectedTemplate} />
+                    <div id="resume-preview">
+                      <ResumePreview data={resumeData} template={selectedTemplate} />
+                    </div>
                   </div>
                 </div>
               </div>
