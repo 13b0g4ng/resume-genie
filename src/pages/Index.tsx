@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { useResumeStore } from '@/hooks/useResumeStore';
 import { PersonalInfoForm } from '@/components/resume/PersonalInfoForm';
 import { ExperienceForm } from '@/components/resume/ExperienceForm';
@@ -13,7 +14,7 @@ import { ExportOptions } from '@/components/resume/ExportOptions';
 import { SectionNav } from '@/components/resume/SectionNav';
 import { Button } from '@/components/ui/button';
 import { ATSScore, JobMatch } from '@/types/resume';
-import { Sparkles, FileText, RotateCcw } from 'lucide-react';
+import { Sparkles, FileText, RotateCcw, ArrowLeft } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function Index() {
@@ -240,6 +241,11 @@ export default function Index() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
+              <Link to="/">
+                <Button variant="ghost" size="icon" className="mr-2">
+                  <ArrowLeft className="w-5 h-5" />
+                </Button>
+              </Link>
               <div className="w-10 h-10 rounded-xl gradient-gold flex items-center justify-center shadow-gold">
                 <FileText className="w-5 h-5 text-primary-foreground" />
               </div>
