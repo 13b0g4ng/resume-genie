@@ -6,62 +6,66 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
+    --background: 210 30% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 8%;
+    --card: 210 30% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 10%;
+    --popover: 210 30% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 43 96% 58%;
-    --primary-foreground: 222 47% 6%;
+    --primary: 200 80% 70%;
+    --primary-foreground: 210 30% 8%;
 
-    --secondary: 222 30% 14%;
+    --secondary: 210 40% 18%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 222 30% 18%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 210 30% 20%;
+    --muted-foreground: 210 25% 55%;
 
-    --accent: 222 30% 20%;
+    --accent: 215 60% 25%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 222 30% 18%;
-    --input: 222 30% 14%;
-    --ring: 43 96% 58%;
+    --border: 210 30% 20%;
+    --input: 210 30% 16%;
+    --ring: 200 80% 70%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --gradient-gold: linear-gradient(135deg, hsl(43 96% 58%), hsl(35 95% 50%));
-    --gradient-dark: linear-gradient(180deg, hsl(222 47% 8%), hsl(222 47% 4%));
-    --gradient-glass: linear-gradient(135deg, hsl(222 30% 14% / 0.8), hsl(222 30% 10% / 0.6));
+    /* Custom tokens - Baby Blue Theme */
+    --gradient-gold: linear-gradient(135deg, hsl(200 80% 70%), hsl(210 70% 55%));
+    --gradient-dark: linear-gradient(180deg, hsl(210 30% 10%), hsl(210 30% 6%));
+    --gradient-glass: linear-gradient(135deg, hsl(210 30% 16% / 0.8), hsl(210 30% 12% / 0.6));
     
-    --shadow-gold: 0 0 40px hsl(43 96% 58% / 0.15);
-    --shadow-card: 0 8px 32px hsl(222 47% 2% / 0.4);
-    --shadow-elevated: 0 20px 60px hsl(222 47% 2% / 0.6);
+    --shadow-gold: 0 0 40px hsl(200 80% 70% / 0.15);
+    --shadow-card: 0 8px 32px hsl(210 30% 2% / 0.4);
+    --shadow-elevated: 0 20px 60px hsl(210 30% 2% / 0.6);
 
     --font-display: 'DM Serif Display', serif;
     --font-body: 'Inter', sans-serif;
 
     /* ATS Colors */
     --ats-excellent: 142 76% 46%;
-    --ats-good: 43 96% 58%;
-    --ats-fair: 25 95% 53%;
+    --ats-good: 200 80% 60%;
+    --ats-fair: 25 80% 53%;
     --ats-poor: 0 72% 51%;
 
-    --sidebar-background: 222 47% 6%;
+    --sidebar-background: 210 30% 8%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 43 96% 58%;
-    --sidebar-primary-foreground: 222 47% 6%;
-    --sidebar-accent: 222 30% 14%;
+    --sidebar-primary: 200 80% 70%;
+    --sidebar-primary-foreground: 210 30% 8%;
+    --sidebar-accent: 210 30% 16%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 43 96% 58%;
+    --sidebar-border: 210 30% 20%;
+    --sidebar-ring: 200 80% 70%;
+
+    /* Navy accent */
+    --navy: 215 60% 30%;
+    --navy-foreground: 210 40% 98%;
   }
 }
 
@@ -148,10 +152,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(43 96% 58% / 0.2);
+    box-shadow: 0 0 20px hsl(200 80% 70% / 0.2);
   }
   50% {
-    box-shadow: 0 0 40px hsl(43 96% 58% / 0.4);
+    box-shadow: 0 0 40px hsl(200 80% 70% / 0.4);
   }
 }
 
@@ -190,23 +194,37 @@
 /* Resume Template Styles */
 .resume-professional {
   --resume-bg: 0 0% 100%;
-  --resume-text: 222 47% 11%;
-  --resume-accent: 222 47% 20%;
-  --resume-muted: 215 20% 55%;
+  --resume-text: 210 30% 15%;
+  --resume-accent: 215 60% 30%;
+  --resume-muted: 210 20% 55%;
 }
 
 .resume-modern {
   --resume-bg: 210 20% 98%;
-  --resume-text: 222 47% 11%;
-  --resume-accent: 199 89% 48%;
-  --resume-muted: 215 20% 55%;
+  --resume-text: 210 30% 15%;
+  --resume-accent: 200 80% 45%;
+  --resume-muted: 210 20% 55%;
 }
 
 .resume-creative {
-  --resume-bg: 270 50% 98%;
-  --resume-text: 270 50% 15%;
-  --resume-accent: 270 67% 47%;
-  --resume-muted: 270 20% 55%;
+  --resume-bg: 200 30% 97%;
+  --resume-text: 210 30% 15%;
+  --resume-accent: 200 70% 50%;
+  --resume-muted: 210 20% 55%;
+}
+
+.resume-minimal {
+  --resume-bg: 0 0% 100%;
+  --resume-text: 210 30% 20%;
+  --resume-accent: 210 25% 40%;
+  --resume-muted: 210 15% 60%;
+}
+
+.resume-executive {
+  --resume-bg: 210 15% 98%;
+  --resume-text: 215 60% 20%;
+  --resume-accent: 215 60% 30%;
+  --resume-muted: 210 20% 55%;
 }
 
 /* Scrollbar */
