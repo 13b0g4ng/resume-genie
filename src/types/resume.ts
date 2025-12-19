@@ -44,7 +44,7 @@ export interface ResumeData {
   targetIndustry?: string;
 }
 
-export type TemplateType = 'professional' | 'modern' | 'creative';
+export type TemplateType = 'professional' | 'modern' | 'creative' | 'minimal' | 'executive';
 
 export interface ATSScore {
   overall: number;
